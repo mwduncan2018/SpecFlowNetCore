@@ -1,0 +1,54 @@
+How to delete
+	1) Select and delete the VM in Hyper-VM
+	2) Delete the ".vhdx" file in storage
+
+How to start
+	Learn how to do this in PowerShell
+	
+Mint .NET CORE Installation
+	wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+	sudo dpkg -i packages-microsoft-prod.deb
+
+	sudo apt-get update; \
+	  sudo apt-get install -y apt-transport-https && \
+	  sudo apt-get update && \
+	  sudo apt-get install -y dotnet-sdk-3.1
+  
+	sudo apt-get update; \
+	  sudo apt-get install -y apt-transport-https && \
+	  sudo apt-get update && \
+	  sudo apt-get install -y aspnetcore-runtime-3.1
+  
+	sudo apt-get install -y dotnet-runtime-3.1
+	
+Mint VS Code Installation
+	sudo apt update
+	sudo apt install software-properties-common apt-transport-https wget
+	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+	sudo apt update
+	sudo apt install code
+	
+VS Code C# Extensions
+	C#
+	Awesome DotNetCore Pack
+	
+Start the project
+	1. dotnet nunit
+	2. create 3 folders
+		src
+		features
+		steps
+	3. add SpecFlow dependencies
+		dotnet add package SpecFlow.NUnit
+		(there are 4 options, but only 1 can be selected -- SpecRun.Runner, SpecFlow.xUnit, SpecFlow.MsTest, SpecFlow.NUnit)
+	4. dotnet clean
+	5. dotnet build
+	6. dotnet add package nunit
+	7. there should be a corresponding .cs file for each .feature file, which occurs automatically in Visual Studio
+		in VS Code, the following package must be installed
+		dotnet add package SpecFlow.Tools.MsBuild.Generation
+	8. run the test
+		dotnet test
+	
+	
